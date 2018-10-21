@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+  xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:tx="http://www.springframework.org/schema/tx"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+                      http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                      http://www.springframework.org/schema/tx
+                      http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+
+  <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+    <property name="url" value="jdbc:mysql://localhost:3306/mytest?useUnicode=true&amp;characterEncoding=UTF-8"></property>
+    <property name="username" value="root"></property>
+    <property name="password" value="123"></property>
+    <property name="maxActive" value="100"></property>
+    <property name="maxIdle" value="30"></property>
+    <property name="maxWait" value="500"></property>
+    <property name="defaultAutoCommit" value="true"></property>
+  </bean>
+
+  <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+    <property name="dataSource" ref="dataSource"></property>
+    <property name="hibernateProperties">
+      <props>
+        <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+        <prop key="hibernate.show_sql">true</prop>
+      </props>
+    </property>
+    <property name="mappingResources">
+      <list>
+        <value>com/fuji/bean/Bank.hbm.xml</value>
+        <value>com/fuji/bean/User.hbm.xml</value>
+        <value>com/fuji/bean/Material.hbm.xml</value>
+      </list>
+    </property>
+  </bean>
+  <bean id="transactionManager"
+    class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+    <property name="sessionFactory">
+    <ref local="sessionFactory" />
+    </property>
+  </bean>
+  <tx:annotation-driven transaction-manager="transactionManager" />
+
+  <!--银行表-->
+  <bean id="bankDao" class="com.fuji.dao.impl.BankDAOImpl" scope="singleton">
+    <property name="sessionFactory">
+      <ref bean="sessionFactory"/>
+    </property>
+  </bean>
+
+  <bean id="bankService" class="com.fuji.service.impl.BankServiceImpl">
+    <property name="bankDao" ref="bankDao"></property>
+  </bean>
+
+  <!--用户表-->
+  <bean id="userDao" class="com.fuji.dao.impl.UserDAOImpl" scope="singleton">
+    <property name="sessionFactory">
+      <ref bean="sessionFactory"/>
+    </property>
+  </bean>
+
+  <bean id="userService" class="com.fuji.service.impl.UserServiceImpl">
+    <property name="userDao" ref="userDao"></property>
+  </bean>
+
+  <bean id="userLoginAction" class="com.fuji.action.user.UserLoginAction" scope="prototype">
+    <property name="service" ref="userService"></property>
+    <property name="bankService" ref="bankService"></property>
+  </bean>
+
+ <bean id="userLogoutAction" class="com.fuji.action.user.UserLogoutAction" scope="prototype">
+  </bean>
+
+ <bean id="systemErrorAction" class="com.fuji.action.SystemErrorAction" scope="prototype">
+  </bean>
+
+  <bean id="listUserAction" class="com.fuji.action.user.ListUserAction" scope="prototype">
+    <property name="service" ref="userService"></property>
+  </bean>
+	<!--   action用户配置 -->
+  <bean class="com.fuji.action.user.UserAction" id="userAction" scope="prototype">
+		<property name="userService" ref="userService"/>
+  </bean>
+    <!-- 修改密码 -->
+  <bean id="modifyPasswordAction" class="com.fuji.action.user.ModifyPasswordAction" scope="prototype">
+    <property name="userService" ref="userService"></property>
+  </bean>
+    <!-- 素材 Service-->
+  <bean id="materialService" class="com.fuji.service.impl.MaterialServiceImpl" >
+    <property name="materialDao" ref="materialDao"></property>
+  </bean>
+    <!-- 素材 Dao-->
+  <bean id="materialDao" class="com.fuji.dao.impl.MaterialDaoImpl" scope="singleton">
+    <property name="sessionFactory" ref="sessionFactory"></property>
+  </bean>
+    <!-- 素材list action-->
+  <bean id="listMaterialAction" class="com.fuji.action.material.ListMaterialAction" scope="prototype">
+    <property name="materialService" ref="materialService"></property>
+  </bean>
+    <!-- 素材release action-->
+  <bean id="releaseMaterialAction" class="com.fuji.action.material.ReleaseMaterialAction" scope="prototype">
+    <property name="materialService" ref="materialService"></property>
+  </bean>
+</beans>

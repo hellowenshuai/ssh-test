@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+/* 搜索的 查询添加用户位于同一列中 */
+.divCenter{
+	float:left;
+}
+.searchTable{
+	float:left;
+}
+
+
+/* listUser 查询 添加用户按钮 */
+.rightClick{
+	float:left;
+}
+.lowClick{
+	float:left;
+}
+
+.rightClick ul li{
+	text-align:center;
+}
+
+
+
+
+
+

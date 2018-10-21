@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+ <!DOCTYPE hibernate-mapping PUBLIC
+           "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+           "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="com.fuji.bean.Bank" table="bank">
+    <id name="bank_id" type="string" column="bank_id" length="3">
+      <generator class="assigned"></generator>
+    </id>
+    <property name="bank_name" type="string" column="bank_name" length="50" />
+  </class>
+
+</hibernate-mapping>

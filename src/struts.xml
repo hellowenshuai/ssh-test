@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="default" extends="struts-default">
+		<interceptors>
+			<interceptor name="sessionCheck"
+				class="com.fuji.interceptor.SessionInterceptor" />
+			<interceptor-stack name="globalStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="sessionCheck" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="globalStack" />
+
+		<global-results>
+			<result name="sessionTimeout">/page/error.jsp</result>
+			<result name="allException" type="chain">systemError</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping result="allException" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+
+		<action name="systemError" class="systemErrorAction" method="execute">
+			<result name="success">/page/error.jsp</result>
+		</action>
+	</package>
+
+	<package name="user" extends="default">
+
+		<action name="userLogin" class="userLoginAction">
+			<result name="success">/page/main.jsp</result>
+			<result name="input">/login.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="userLogout" class="userLogoutAction">
+			<result name="success">/login.jsp</result>
+		</action>
+		<action name="listUser" class="listUserAction">
+			<result name="success">/page/user/listUser.jsp</result>
+		</action>
+		<action name="listUserInit" class="listUserAction" method="init">
+			<result name="success">/page/user/listUser.jsp</result>
+			<result name="input">/page/user/listUser.jsp</result>
+		</action>
+		<!-- 创建的添加用户行为 -->
+		<action name="userAction" class="com.fuji.action.user.UserAction"
+			method="addUser">
+			<result name="addUser">/page/user/addUser.jsp</result>
+		</action>
+
+		<!-- 创建的修改用户权限功能 -->
+		<action name="modifyPermissions" class="com.fuji.action.user.ModifyPermissionsAction"
+			method="update">
+			<result name="modifyPermission">/page/user/modifyPermissions.jsp</result>
+		</action>
+
+		<!--跳转到修改密码页面 -->
+		<action name="toEdit" class="modifyPasswordAction" method="toEdit">
+			<result name="edit">/page/user/editUser.jsp</result>
+			<result name="noPriority">/page/noPermission.jsp</result>
+		</action>
+		<!-- 执行修改密码 -->
+		<action name="editPassword" class="modifyPasswordAction"
+			method="editPassword">
+			<result name="edit">/page/user/editUser.jsp</result>
+			<result name="yes">/login.jsp</result>
+			<result name="listUser" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">listUserInit.action</param>
+			</result>
+		</action>
+	</package>
+	<package name="material" extends="default">
+		<action name="listMaterial" class="listMaterialAction" >
+			<result name="list">/page/material/listMaterial.jsp</result>
+		</action>
+		<action name="listMaterialInit" class="listMaterialAction" method="init">
+			<result name="list">/page/material/listMaterial.jsp</result>
+		</action>
+		<action name="releaseMaterial" class="releaseMaterialAction" method="releaseMaterial">
+			<result name="toListMaterial" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">listMaterialInit.action</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

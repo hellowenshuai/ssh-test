@@ -1,0 +1,48 @@
+
+ html,body{height:100%;}
+ body{
+ background:url(../images/login.png);
+ }
+.header{
+  background:#335077;
+  border:none;
+  height:100%;
+}
+.leftPage{
+  top:77px;
+  position:absolute;
+  width:100%;
+  margin:0 auto;
+}
+/* 标题信息 */
+.tableTitle{
+  text-align:center;
+   font-size:250%;
+  color:#335077;
+}
+/* 登录按钮 */
+ table input[type="button"] {
+  font-weight: normal;
+  width:190px;
+  margin-top:10px;
+  margin-bottom:20px;
+  padding:5px;
+}
+.wwFormTable td{
+  min-width:100px;
+  height:40px;
+  min-width:50px;
+}
+/* table展示用户名和密码，有struct2标签自动生成 */
+.wwFormTable{
+  margin:0 auto;
+}
+.fixed-bottom{
+  margin-top:250px;
+}
+/* 验证后的错误提示信息 */
+.errorMSG{
+  margin:0 auto;
+  text-align:center;
+}
+

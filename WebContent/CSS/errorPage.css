@@ -1,0 +1,73 @@
+@CHARSET "UTF-8";
+body{
+  font-family:'微软雅黑';
+  color:white;
+}
+.container{
+  margin:0 auto;
+}
+
+/* 显示信息居中 */
+.center-div{
+  margin:0 auto;
+  margin-top:200px;
+  width:500px;
+  height:250px;
+  background:#290c0c;
+}
+
+/* error标题 */
+.error-title{
+  height:50px;
+  text-align:center;
+  border-bottom:1px solid gray;
+  font-size:35px;
+  font-weight:bold;
+}
+/* 标题下面内容 （包括图片和错误信息）*/
+.mainContent{
+  float:left;
+}
+/* error 左侧的显示图片 */
+.left-img{
+  width:150px;
+  height:200px;
+  float:left;
+}
+
+ /* 具体的错误信息 */
+.right-info{
+  margin-top:10px;
+  margin-bottom:20px;
+  float:left;
+  width:348px;
+  height:200px;
+}
+/* error 类型 */
+.error-msg{
+  font-size:28px;
+  padding-left:20px;
+
+}
+.jump p{
+  clear:all;
+  margin-top:10px;
+  padding-left:20px;
+  font-size:15px;
+  color:gray;
+}
+.error-jump{
+  float:left;
+  padding:0px;
+}
+.error-jump li{
+  float:left;
+  margin:20px 15px 5px 15px;
+  padding-left:0px;
+}
+
+.error-jump li a{
+  padding:5px;
+  color:green;
+  font-size:16px;
+}

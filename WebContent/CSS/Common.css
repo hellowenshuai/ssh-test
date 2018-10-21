@@ -1,0 +1,421 @@
+/* 蜈ｱ騾夊ｮｾ隶｡逧ГSS */
+body{
+  padding:0px;
+  margin:0px;
+  overflow:hide;
+  font-family: "Microsoft YaHei" ! important;
+  background-color: #f5f5f5;
+}
+
+/* 譯�楔逧��蠑�*/
+iframe{
+  width:100%;
+  overflow:hide;
+  border:0;
+  margin:0px;
+  padding:0px;
+}
+/* a體ｾ謗･譬�ｭｾ逧�ｸ榊酔迥ｶ諤∽ｸ狗噪譬ｷ蠑�*/
+a:link{
+text-decoration:none;
+}
+a:visited{
+text-decoration:none;
+}
+a:hover{
+text-decoration:none;
+}
+a:active{
+text-decoration:none;
+}
+
+/* 譌�ｺ丞�陦ｨ蜿匁ｶ亥燕髱｢逧�ｰ丞怕轤ｹ */
+ul{
+  list-style:none
+}
+
+/* 陦ｨ譬ｼ隶ｾ鄂ｮ霎ｹ譯�*/
+table {
+  border:1px solid #c7d0d5;
+}
+
+/* 陦ｨ譬ｼ蜴ｻ謗牙屁蜻ｨ�瑚�髱槫�驛ｨ逧�ｾｹ譯�*/
+form table{
+  border:none;
+}
+
+
+/* 陦ｨ譬ｼ蜊募�譬ｼ逧�ｭ嶺ｽ楢ｮｾ鄂ｮ */
+td .label{
+  font-size:18px;
+  color:black;
+  font-style:normal;
+}
+
+
+/* 霎灘�譯�ｱｻ蝙倶ｸｺtext謌冶�password逧�nput隶ｾ鄂ｮ */
+input[type="text"],input[type="password"],textarea{
+  height: auto;
+  /* border:1px solid black; */
+  border:1px solid #c7d0d5;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding:5px;
+  box-shadow:none;
+  font-size: 16px;
+}
+
+input[type="text"]:focus,input[type="password"]:focus,textarea:focus{
+  border-color:orange;
+}
+
+textarea{
+  ime-mode:active;
+  -ms-ime-mode:active;
+}
+
+/* div螻�ｸｭ */
+.divCenter{
+  margin:0 auto;
+}
+
+
+/* 螟ｴ驛ｨheader 蟾ｦ萓ｧlogo */
+.logo{
+  height:70px;
+  width:100%;
+  background:url(../images/headBg768-70.png) no-repeat;
+
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/headBg.png',sizingMethod='scale');
+}
+/* 螟ｴ驛ｨheader 鬘ｹ逶ｮ蜷咲ｧｰ */
+.logo-project-name{
+  margin-left:100px;
+  width:350px;
+  color:white;
+  font-size:30px;
+}
+/* 螟ｴ驛ｨheader 蜿ｳ萓ｧ 逕ｨ謌ｷ蜷�蜥�騾��謖蛾聴 */
+.logo-right{
+  background:#335077;
+  height:70px;
+  min-width:350px;
+}
+
+/* 螟ｴ驛ｨheader bottom蛻�牡郤ｿ */
+.headLine{
+  margin:0 0 0 0;;
+  padding:0 0 0 0;;
+  height:7px;
+  background:url(../images/headeLine.png);
+}
+
+.navbar-right li a{
+  font-size:18px;
+  color:white;
+}
+
+/* header逧�承萓ｧ逕ｨ謌ｷ蜥碁�蜃ｺ */
+.navbar-right li a:hover{
+  background:#335077;
+}
+
+.navbar-right li a:visited{
+  background:#335077;
+  }
+
+/*  騾��謖蛾聴 */
+.navbar-right li .header-right-logout:hover{
+  color:yellow;
+  font-size:33px;
+ }
+
+
+/* 荳ｻ隕∫噪譏ｾ遉ｺ蜀�ｮｹ */
+.container{
+  margin-left:0px;
+  margin-right:0px;
+  padding:0px 0px 20px 0px;
+}
+
+
+/* table隶ｾ鄂ｮ */
+/* 謳懃ｴ｢table */
+.searchTable{
+   margin-bottom:10px;
+}
+
+/* 逋ｻ蠖付able */
+
+
+/* 荳ｻ菴灘�螳ｹ  譬�｢俶園蝨ｨ逧ДIV */
+.tableCaption{
+  padding:0px;
+  margin:0px;
+  width:768px;
+}
+/* 荳ｻ菴灘�螳ｹ 豌ｴ蟷ｳ蛻�牡郤ｿ */
+hr{
+  margin:0px 0px 20px 0px;
+  background-color:black;
+  color:black;
+  height:1px;
+  }
+  /* 荳ｻ菴灘�螳ｹ 譬�｢�*/
+.tableTitle{
+  padding-left:0px;
+  margin-left:0px;
+  font-size:200%;
+  color:#335077;
+  /* #c7d0d5,#345379 */
+  font-family: "Microsoft YaHei" ! important;
+}
+/* 荳ｻ菴灘�螳ｹ 謳懃ｴ｢table逧�黒蜈�� */
+.searchTable td{
+  min-width:100px;
+  height:40px;
+  font-size:14px;
+  min-width:50px;
+}
+
+#saveMaterialInput .wwFormTable td,#updateUserPassWord .wwFormTable td,#updateUserPriority .wwFormTable td,#saveUser .wwFormTable td{
+  padding-top:10px;
+}
+/* 荳ｻ菴灘�螳ｹ 謳懃ｴ｢table逧�潔髓ｮ蜥罫eset�茎ubmit譬ｷ蠑丞序蟷ｻ */
+.searchTable button,.list-search-cols button, .wwFormTable button,table input[type="submit"],table input[type="reset"],input[type="button"]{
+   height: auto;
+  /* border:1px solid black; */
+  border:1px solid #c7d0d5;
+  /* ie8荳肴髪謖∝怕隗貞ｱ樊� */
+  border-radius:20px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding:5px;
+  box-shadow:none;
+  font-size: 16px;
+  width:80px;
+  background:lightgray;
+}
+/* 鮠��遘ｻ蜉ｨ蛻ｰ謠蝉ｺ､謖蛾聴荳頑慮 */
+.searchTable button:hover,.list-search-cols li button:hover,.wwFormTable button:hover,table input[type="submit"]:hover,input[type="button"]:hover{
+  background:orange;
+}
+table input[disabled="disabled"]:hover{
+  background:lightgray;
+}
+/* 荳ｻ菴灘�螳ｹ 謳懃ｴ｢扈捺棡table */
+.changePage{
+  margin:0px;
+}
+.ListTable{
+  min-width:500px;
+  table-layout:fixed;
+  margin-bottom:20px;
+}
+
+.ListTable td{
+  border:1px solid #c7d0d5;
+  height:30px;
+  min-width:100px;
+  white-space: nowrap;
+  text-align:center;
+  padding-right:10px;
+  padding-left:10px;
+  overflow:hidden;
+}
+/* 螟�ｳｨ謌冶�隸ｴ譏取枚蟄怜､ｪ髟ｿ�悟庄閭ｽ髴�ｦ∵困陦�*/
+.ListTable .td-descripton{
+  max-width:300px;
+  white-space:pre-wrap;
+}
+
+/* 荳ｻ菴灘�螳ｹ 謳懃ｴ｢扈捺棡table逧�ｬｬ荳�｡瑚ｮｾ鄂ｮ */
+.ListTable tr:first-child td{
+   background:#dbebf1;
+   height:40px;
+   min-width:100px;
+}
+
+/* 逋ｻ蠖慕阜髱｢逧�署莠､form */
+.form-signin input[type="text"],input[type="submit"] {
+  border-radius:10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+} */
+
+/* 謳懃ｴ｢table 逧�nput譬ｷ蠑�*/
+.searchTable input[type="text"]{
+  height: auto;
+  border:1px solid #c7d0d5;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding:5px;
+  box-shadow:none;
+  font-size: 16px;
+}
+
+.citySelect{
+  width:82px;
+}
+.searchTable select{
+  height:auto;;
+}
+
+/* 蛻�｡ｵ譟･隸｢譌ｶ逧�ｷｳ霓ｬ體ｾ謗･逧�nput譯�ｮｾ鄂ｮ */
+.changePage input[type="text"]{
+  padding:0px;
+  font-size:12px;
+}
+
+ input[type="file"]{
+  height: auto;
+  padding:5px;
+}
+form table input[type="file"]:active,input[type="file"]:focus{
+  border:none;
+  outline:none;
+}
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*蟾ｦ萓ｧ逧�ｯｼ闊ｪ譬�譌�ｺ丞�陦ｨ 荳ｭ逧�得謗･a 逧�ｮｾ鄂ｮ*/
+.navbar-nav>li>a{
+  padding-top:10px;
+  padding-bottom:10px;
+  padding-right:30px;
+  line-height:40px;
+}
+
+/* main.jsp 荳ｭ螟ｴ驛ｨ隶ｾ鄂ｮ */
+.navbar-fixed-top {
+   margin-bottom:0px;
+   padding-bottom:0px;
+   height:77px;
+   background:orange;
+}
+
+
+/*蟾ｦ萓ｧ譬剰ｮｾ鄂ｮ */
+.sidebar {
+  display: none;
+}
+/* 閾ｪ蜉ｨ蟶�ｱ�*/
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top:82px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding:0px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  padding:0px;
+  margin:0px;
+
+}
+
+.nav-sidebar F> li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+ color: #fff;
+  font-size:16px;
+ /*   background-color: #428bca;  */
+  background-color: #345379;
+}
+
+.nav-sidebar a{
+  font-size:16px;
+}
+
+/* main 荳ｻ菴灘�螳ｹ */
+.main {
+  top:82px;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  }
+
+/* listUser.jsp */
+.rowsTwo a{
+  padding:20px;
+}
+
+/* 蟆� 體ｾ謗･譬ｷ蠑乗隼蜿俶�button邀ｻ莨ｼ逧�仞遉ｺ螟冶｡ｨ  a 螟門ｱる怙隕∝ｵ悟･嶺ｸ�ｸｪdiV*/
+.buttonStyle{
+  background:orange;
+  height: auto;
+  padding-top:5px;
+  padding-bottom:5px;
+  border:1px solid #c7d0d5;
+  font-size: 16px;
+  width:100px;
+}
+
+select{
+    max-height:100px;
+    min-width:20px;
+}
+
+.tableParent{
+  max-width:100%;
+  overflow-x:auto;
+}
+/* 隶ｾ鄂ｮ霎灘�豕�*/
+#machineNum,#machineId,#userName,#saveUser_user_name,#userLogin_user_name{
+  ime-mode:disabled;
+  -ms-ime-mode:disabled;
+}
+#materialVersion{
+  ime-mode:disabled;
+  -ms-ime-mode:disabled;
+}
+.buttonRowsLayout{
+  margin-top:20px;
+}
+.buttonRowsLayout input[type="button"]{
+  margin:0px 0px 0px 20px;
+}
+
+.list-search-cols li:first-child{
+  margin-top:5px;
+  margin-bottom:20px;
+}
+
+#jump{
+  width:35px;
+}
+.col-sm-3,.col-md-2{
+  padding-right:5px;padding-left:5px
+}
+/* 隶ｾ鄂ｮ蟾ｦmenu蜥悟承萓ｧ逧�ｸｻ隕∝�螳ｹ謇�頃逧�ｯ比ｾ�*/
+@media (min-width:992px){
+  .col-md-2{width:13.66666667%;}
+  .col-md-10{width:87.33333333%;}
+  .col-md-offset-2{margin-left:13.66666%}
+
+
+}
+@media (min-width:768px){
+  .col-sm-3{width:15%;}
+  .col-sm-9{width:85%;}
+  .col-sm-offset-3{margin-left:14%}
+
+}

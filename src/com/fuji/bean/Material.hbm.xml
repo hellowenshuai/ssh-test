@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+ <!DOCTYPE hibernate-mapping PUBLIC
+           "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+           "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.fuji.bean.Material" table="material">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="material_type" type="string" column="material_type"
+			length="20"></property>
+		<property name="material_version" type="string" column="material_version"
+			length="14"></property>
+		<property name="remark" type="string" column="remark" length="256"></property>
+
+		<property name="release_status" type="java.lang.Integer"
+			column="release_status" length="1"></property>
+			
+		<property name="deploy_machine_num" type="java.lang.Integer"
+			column="deploy_machine_num" length="7"></property>
+
+		<property name="insert_datetime" type="string" column="insert_datetime"
+			length="20"></property>
+		<property name="insert_user_name" type="string" column="insert_user_name"
+			length="50"></property>
+		<property name="update_datetime" type="string" column="update_datetime"
+			length="20"></property>
+		<property name="update_user_name" type="string" column="update_user_name"
+			length="50"></property>
+		<property name="bank_id" type="string" column="bank_id" length="3"></property>
+	</class>
+
+</hibernate-mapping>
